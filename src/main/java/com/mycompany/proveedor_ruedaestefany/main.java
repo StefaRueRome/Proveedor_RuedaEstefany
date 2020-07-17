@@ -86,10 +86,18 @@ public class main {
                             System.out.println("Nombre: " + p2.getNombre());
                             System.out.println("Número Artículos: " + p2.getNumeroArticulos());
                             //Se recopila la nueva informacion sobre los articulos
-                            System.out.println("Ingrese el nuevo número de artículos: ");
+                            System.out.println("Ingrese el número de artículos: ");
                             int nArticulos = Integer.parseInt(lectura.nextLine());
-                            //cambio de numero artículos
-                            p2.setNumeroArticulos(nArticulos);
+                            //cambio de numero artículos segun + o -
+                            int disp = p2.getNumeroArticulos();
+
+                            if (nArticulos > 0) {
+                                p2.setNumeroArticulos(disp + nArticulos);
+                            } else {
+                                p2.setNumeroArticulos(nArticulos + disp);
+
+                            }
+
                             System.out.println("---Se actualizó el número de artículos del proveedor---");
                         }
 
